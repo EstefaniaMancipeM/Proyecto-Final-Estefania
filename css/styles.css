@@ -1,25 +1,34 @@
+/* Paleta de colores */
 :root {
     --crema: #efe6d8;
     --papel: #fffdf8;
     --amarillo-claro: #f5e6c9;
     --terracota: #b86f52;
     --terracota-oscuro: #754737;
+    --verde-oliva: #778064;
+    --mostaza: #a18a52;
     --cafe: #51443b;
     --cafe-claro: #7b6b5e;
     --linea: #d8c7b5;
 }
+
+/* Estilos generales */
 body {
     background-color: var(--crema);
     color: var(--cafe);
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Hoja principal */
 .agenda {
     background-color: var(--papel);
     border: 2px solid var(--cafe);
     border-radius: 8px;
     padding: 45px 55px;
+    box-shadow: 8px 8px 0 rgba(81, 68, 59, 0.12);
 }
+
+/* Encabezado de la aplicación */
 .encabezado {
     display: flex;
     justify-content: space-between;
@@ -42,6 +51,7 @@ body {
 }
 
 .semana {
+    flex-shrink: 0;
     background-color: #e8d7bd;
     color: var(--terracota-oscuro);
     border-radius: 25px;
@@ -51,9 +61,12 @@ body {
     text-transform: uppercase;
 }
 
+/* Separación después del encabezado */
 .contenido {
     padding-top: 40px;
 }
+
+/* Nota que contiene el formulario */
 .nota {
     position: relative;
     background-color: var(--amarillo-claro);
@@ -62,6 +75,7 @@ body {
     padding: 42px 30px 30px;
 }
 
+/* Cinta decorativa */
 .cinta {
     position: absolute;
     top: -16px;
@@ -79,15 +93,9 @@ body {
     font-weight: bold;
 }
 
-.frase {
-    margin-top: 30px;
-    margin-bottom: 0;
-    color: var(--cafe-claro);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.9rem;
-    font-style: italic;
-}   
+/* Campos del formulario */
 .form-label {
+    color: var(--cafe);
     font-weight: 600;
 }
 
@@ -104,6 +112,7 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(184, 111, 82, 0.2);
 }
 
+/* Botón principal */
 .boton-tierra {
     background-color: var(--terracota);
     color: white;
@@ -115,26 +124,42 @@ body {
     background-color: var(--terracota-oscuro);
     color: white;
 }
+
+/* Frase de la nota */
+.frase {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: var(--cafe-claro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Encabezado de la lista */
 .titulo-lista {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .titulo-lista h2 {
     margin-bottom: 5px;
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .titulo-lista p {
+    margin-bottom: 0;
     color: var(--cafe-claro);
 }
 
-.estado-ejemplo {
-    background-color: #e6c9b8;
+/* Contador de tareas */
+.contador-tareas {
+    flex-shrink: 0;
+    background-color: #e8d7bd;
     color: var(--terracota-oscuro);
     border-radius: 20px;
     padding: 8px 15px;
@@ -142,49 +167,62 @@ body {
     font-weight: bold;
 }
 
-.tarea-ejemplo {
+/* Tarjetas de Bootstrap */
+.tarjeta-tarea {
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
+    border-left: 5px solid var(--terracota);
+    border-radius: 6px;
+}
+
+/* Encabezado interno de cada tarjeta */
+.encabezado-tarea {
     display: flex;
-    gap: 20px;
-    padding: 25px 0;
-    border-top: 1px solid var(--linea);
-    border-bottom: 1px solid var(--linea);
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.circulo {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border: 3px solid var(--terracota);
-    border-radius: 50%;
-}
-
-.tarea-ejemplo h3 {
+/* Título de la tarea */
+.tarjeta-tarea .card-title {
+    margin-bottom: 12px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
-.tarea-ejemplo p {
-    margin-bottom: 8px;
+/* Descripción */
+.tarjeta-tarea .card-text {
     color: var(--cafe-claro);
 }
 
-.tarea-ejemplo small {
+/* Fecha */
+.fecha-tarea {
     color: var(--terracota-oscuro);
+    font-size: 0.9rem;
     font-weight: bold;
 }
 
-.espacio-tareas {
-    margin-top: 30px;
-    border: 2px dashed #9b8b7e;
-    border-radius: 5px;
-    padding: 24px;
-    color: var(--cafe-claro);
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 0.85rem;
+/* Estados */
+.estado-pendiente {
+    flex-shrink: 0;
+    background-color: #c98162;
+    color: white;
 }
+
+.estado-proceso {
+    flex-shrink: 0;
+    background-color: var(--mostaza);
+    color: white;
+}
+
+.estado-finalizada {
+    flex-shrink: 0;
+    background-color: var(--verde-oliva);
+    color: white;
+}
+
+/* Adaptación para pantallas pequeñas */
 @media (max-width: 768px) {
     .agenda {
         padding: 30px 22px;
@@ -200,6 +238,10 @@ body {
     }
 
     .titulo-lista {
+        flex-direction: column;
+    }
+
+    .encabezado-tarea {
         flex-direction: column;
     }
 }
