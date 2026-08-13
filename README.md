@@ -18,3 +18,6 @@ Figma: https://www.figma.com/proto/xmvsIKl0WgVHIFQlZhcvd1/VidaFit?node-id=4-2&t=
 
 Trello
 https://trello.com/b/BDh2gboo/proyecto-estefania
+
+## Deploy
+https://estefaniamancipem.github.io/Proyecto-Final-Estefania/
